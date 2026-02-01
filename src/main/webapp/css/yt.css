@@ -1,0 +1,326 @@
+:root {
+    --yt-bg: #f7f8fb;
+    --yt-surface: #ffffff;
+    --yt-surface-alt: #f0f2f7;
+    --yt-border: #e0e5ef;
+    --yt-text: #1f2933;
+    --yt-text-muted: #6b7280;
+    --yt-accent: #2563eb;
+    --yt-accent-alt: #38bdf8;
+    --yt-card-radius: 18px;
+    --yt-spacing: 1.25rem;
+}
+
+body.yt-body {
+    background: var(--yt-bg);
+    color: var(--yt-text);
+    font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+}
+
+a {
+    color: inherit;
+}
+
+.yt-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--yt-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 2rem;
+}
+
+.yt-header__left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.yt-header__search {
+    flex: 1;
+    max-width: 520px;
+}
+
+.yt-header__search input {
+    background: var(--yt-surface-alt);
+    border: 1px solid var(--yt-border);
+    color: var(--yt-text);
+    border-radius: 999px;
+    padding: 0.45rem 1rem;
+    width: 100%;
+}
+
+.yt-header__user {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.yt-role-badge {
+    border: 1px solid var(--yt-border);
+    border-radius: 999px;
+    padding: 0.15rem 0.85rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--yt-text-muted);
+}
+
+.yt-shell {
+    display: flex;
+    min-height: calc(100vh - 64px);
+    flex-wrap: nowrap;
+}
+
+.yt-side {
+    width: 230px;
+    background: var(--yt-surface);
+    padding: 1.5rem 1rem;
+    border-right: 1px solid var(--yt-border);
+    position: sticky;
+    top: 64px;
+    height: calc(100vh - 64px);
+    overflow-y: auto;
+    box-shadow: inset -1px 0 0 var(--yt-border);
+}
+
+.yt-side__group {
+    margin-bottom: 1.5rem;
+}
+
+.yt-side__title {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--yt-text-muted);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.yt-side__link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 12px;
+    color: var(--yt-text-muted);
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+    font-weight: 500;
+}
+
+.yt-side__link:hover,
+.yt-side__link--active {
+    background: var(--yt-surface-alt);
+    color: var(--yt-text);
+}
+
+.yt-main {
+    flex: 1;
+    padding: 2rem;
+}
+
+.yt-section-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.yt-card {
+    background: var(--yt-surface);
+    border: 1px solid var(--yt-border);
+    border-radius: var(--yt-card-radius);
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.yt-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.yt-card__title {
+    font-weight: 600;
+}
+
+.yt-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.15rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    border: 1px solid var(--yt-border);
+    color: var(--yt-text-muted);
+}
+
+.yt-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.yt-stat {
+    background: var(--yt-surface);
+    border: 1px solid var(--yt-border);
+    border-radius: var(--yt-card-radius);
+    padding: 1.25rem;
+}
+
+.yt-stat label {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--yt-text-muted);
+}
+
+.yt-stat strong {
+    font-size: 2rem;
+    font-weight: 600;
+    display: block;
+    margin-top: 0.35rem;
+}
+
+.yt-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.yt-table thead {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.75rem;
+    color: var(--yt-text-muted);
+    border-bottom: 1px solid var(--yt-border);
+}
+
+.yt-table th,
+.yt-table td {
+    padding: 0.75rem 0.35rem;
+}
+
+.yt-table tbody tr {
+    border-bottom: 1px solid var(--yt-border);
+}
+
+.yt-tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.yt-tag {
+    background: var(--yt-surface-alt);
+    border-radius: 999px;
+    padding: 0.25rem 0.9rem;
+    font-size: 0.85rem;
+}
+
+.yt-form {
+    background: var(--yt-surface);
+    border: 1px solid var(--yt-border);
+    border-radius: var(--yt-card-radius);
+    padding: 1.5rem;
+}
+
+.yt-form label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--yt-text-muted);
+}
+
+.yt-form input,
+.yt-form select,
+.yt-form textarea {
+    background: var(--yt-surface-alt);
+    border: 1px solid var(--yt-border);
+    border-radius: 12px;
+    color: var(--yt-text);
+    padding: 0.6rem 0.85rem;
+    width: 100%;
+}
+
+.yt-button {
+    background: linear-gradient(135deg, var(--yt-accent), var(--yt-accent-alt));
+    color: white;
+    border: none;
+    border-radius: 999px;
+    padding: 0.6rem 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: opacity 0.2s ease;
+}
+
+.yt-button:hover {
+    opacity: 0.9;
+}
+
+.yt-card--list .list-group-item {
+    background: transparent;
+    border: none;
+    color: var(--yt-text);
+}
+
+.yt-card--list .list-group-item + .list-group-item {
+    border-top: 1px solid var(--yt-border);
+}
+
+.yt-card--list a {
+    color: var(--yt-accent-alt);
+    text-decoration: none;
+}
+
+.yt-table-actions a {
+    border-radius: 12px;
+    border: 1px solid var(--yt-border);
+    padding: 0.35rem 0.8rem;
+    color: var(--yt-text);
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.yt-table-actions a + a {
+    margin-left: 0.35rem;
+}
+
+.yt-empty-state {
+    color: var(--yt-text-muted);
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+.yt-auth-card {
+    background: var(--yt-surface);
+    border: 1px solid var(--yt-border);
+    border-radius: var(--yt-card-radius);
+    padding: 2rem;
+    max-width: 420px;
+    margin: 4rem auto;
+}
+
+@media (max-width: 960px) {
+    .yt-shell {
+        flex-direction: column;
+    }
+
+    .yt-side {
+        width: 100%;
+        height: auto;
+        position: static;
+        border-right: none;
+        border-bottom: 1px solid var(--yt-border);
+    }
+}
+

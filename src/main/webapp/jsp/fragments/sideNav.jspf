@@ -1,0 +1,30 @@
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
+<nav class="yt-side">
+    <div class="yt-side__group">
+        <div class="yt-side__title">Primary</div>
+        <a class="yt-side__link" href="${pageContext.request.contextPath}/dashboard">Home</a>
+        <a class="yt-side__link" href="${pageContext.request.contextPath}/search">Search</a>
+    </div>
+    <c:if test="${sessionScope.role == 'PARENT'}">
+        <div class="yt-side__group">
+            <div class="yt-side__title">Information</div>
+            <a class="yt-side__link" href="${pageContext.request.contextPath}/subjects">Subjects</a>
+        </div>
+    </c:if>
+    <c:if test="${sessionScope.role != 'PARENT'}">
+        <div class="yt-side__group">
+            <div class="yt-side__title">Management</div>
+            <a class="yt-side__link" href="${pageContext.request.contextPath}/students">Students</a>
+            <a class="yt-side__link" href="${pageContext.request.contextPath}/classes">Classes</a>
+            <a class="yt-side__link" href="${pageContext.request.contextPath}/subjects">Subjects</a>
+        </div>
+    </c:if>
+    <c:if test="${sessionScope.role == 'ADMIN'}">
+        <div class="yt-side__group">
+            <div class="yt-side__title">Admin</div>
+            <a class="yt-side__link" href="${pageContext.request.contextPath}/teachers">Teachers</a>
+            <a class="yt-side__link" href="${pageContext.request.contextPath}/grades">Grades</a>
+        </div>
+    </c:if>
+</nav>
+

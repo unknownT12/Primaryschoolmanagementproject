@@ -1,0 +1,21 @@
+<div class="yt-header">
+    <div class="yt-header__left">
+        <span>&#9776;</span>
+        <a href="${pageContext.request.contextPath}/dashboard" class="text-decoration-none text-light">Primary School Admin</a>
+    </div>
+    <div class="yt-header__search">
+        <form action="${pageContext.request.contextPath}/search" method="get">
+            <input type="text" name="q" placeholder="Search students, teachers, classes..." value="${param.q}">
+        </form>
+    </div>
+    <div class="yt-header__user">
+        <c:if test="${not empty sessionScope.role}">
+            <span class="yt-role-badge">${sessionScope.role}</span>
+        </c:if>
+        <c:if test="${not empty sessionScope.currentUser}">
+            <span>${sessionScope.currentUser.fullName}</span>
+            <a href="${pageContext.request.contextPath}/auth?action=logout" class="btn btn-sm btn-outline-light">Logout</a>
+        </c:if>
+    </div>
+</div>
+
